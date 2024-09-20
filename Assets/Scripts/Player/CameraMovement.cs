@@ -11,12 +11,6 @@ public class CameraMovement : MonoBehaviour
     //Variables Privadas
     private float xRotation, yRotation;
 
-    // Update is called once per frame
-    void Update()
-    {
-        Rotation();
-    }
-
     public void Rotation()
     {
         //Si podemos rotar

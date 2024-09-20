@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     //Variables Publicas
     public float walkSpeed, runSpeed, jumpForce;
     public bool canMove;
+    public GroundDetector groundDetector;
 
     //Variables Privadas
     private Vector3 movementVector, verticalForce;
@@ -19,20 +20,23 @@ public class PlayerMovement : MonoBehaviour
     {
         // Inicializacion de Variables
         characterController = GetComponent<CharacterController>();
-        speed = 0;
+        speed = walkSpeed;
         currentSpeed = 0;
         verticalForce = Vector3.zero;
         movementVector = Vector3.zero;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Movement()
     {
         if (canMove)
         {
             Walk();
             Run();
+            Jump();
         }
+        Gravity();
+        CheckGround();
     }
 
     //Funcion para caminar
@@ -67,5 +71,41 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = walkSpeed;
         }
+    }
+
+    //Funcion para saltar
+    void Jump()
+    {
+        if (isGrounded && Input.GetAxis("Jump") > 0f)
+        {
+            verticalForce = new Vector3(0f, jumpForce, 0f);
+            isGrounded = false;
+        }
+    }
+
+    //Funcion de gravedad
+    void Gravity()
+    {
+        if (!isGrounded)
+        {
+            verticalForce += Physics.gravity * Time.deltaTime;
+        }
+        else
+        {
+            verticalForce = new Vector3(0f, -2f, 0f);
+        }
+        characterController.Move(verticalForce * Time.deltaTime);
+    }
+
+    //Funcion para ver si estamos tocando el piso
+    void CheckGround()
+    {
+        isGrounded = groundDetector.GetIsGrounded();
+    }
+
+    //Funcion para devolver la velocidad actual del jugador
+    public float GetCurrentSpeed()
+    {
+        return currentSpeed; 
     }
 }
