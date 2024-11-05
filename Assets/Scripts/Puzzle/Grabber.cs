@@ -101,6 +101,7 @@ public class Grabber : MonoBehaviour
         {
             Destroy(objectInHand.GetComponent<Rigidbody>());
         }
+        objectInHand.GetComponent<Collider>().enabled = false;
     }
 
     void DropObject()
@@ -110,6 +111,7 @@ public class Grabber : MonoBehaviour
         {
             objectInHand.transform.parent = null;
             objectInHand.AddComponent<Rigidbody>();
+            objectInHand.GetComponent<Collider>().enabled = true;
             objectInHand.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * pushForce);
             objectInHand = null;
         }
