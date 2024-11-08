@@ -8,7 +8,7 @@ public class Puzzle : MonoBehaviour
     // Variables publicas
     public Camera puzzleCamera;
     public PuzzlePosition[] positions;
-
+    public bool _debug;
     public UnityEvent onStart, onExit, onCompleted;
 
     // Variables privadas
@@ -19,6 +19,13 @@ public class Puzzle : MonoBehaviour
     {
         isActive = false;
         isCompleted = false;
+        if (_debug)
+        {
+            foreach (PuzzlePosition _position in positions)
+            { 
+                _position.ObjectMatch();
+            }
+        }
     }
 
     // Update is called once per frame
