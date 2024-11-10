@@ -6,10 +6,10 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DrawerAnimCtrl
+  m_Name: ClosetAnimate1
   m_Controller: {fileID: 9100000, guid: a4263da7493249f479d9a3ad80cd0ab2, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 9fe77ffac2337394ebf869fb19559fdc, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 4d7272894477838468c5a9ac309e4af3, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 717a1e5ed2d27684091b7f80ec9a6f20, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 465dcc47fbe926248b5a293b941c624c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8e803ac585a7ae447977d58998781bd7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9fe77ffac2337394ebf869fb19559fdc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: be26e14c681ed0e4e954be8bcb386f38, type: 2}

@@ -17,4 +17,12 @@ public class PuzzleProgressBar : MonoBehaviour
         progressAdvance = 1f/amountPuzzles;
         barraProgreso.fillAmount += progressAdvance;
     }
+
+    public void Update()
+    {
+        if (barraProgreso.fillAmount == 1)
+        {
+
+        }
+    }
 }
