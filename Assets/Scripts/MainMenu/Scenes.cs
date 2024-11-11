@@ -14,4 +14,5 @@ public class Scenes : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

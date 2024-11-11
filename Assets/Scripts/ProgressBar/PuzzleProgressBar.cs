@@ -8,6 +8,8 @@ public class PuzzleProgressBar : MonoBehaviour
     //Variables Publicas
     public Image barraProgreso;
     public float amountPuzzles;
+    public GameObject mainUI;
+    public GameObject winScreen;
 
     //Variables Privadas
     private float progressAdvance;
@@ -22,7 +24,8 @@ public class PuzzleProgressBar : MonoBehaviour
     {
         if (barraProgreso.fillAmount == 1)
         {
-
+            mainUI.SetActive(false);
+            winScreen.SetActive(true);
         }
     }
 }
