@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PuzzleProgressBar : MonoBehaviour
 {
     //Variables Publicas
     public Image barraProgreso;
     public float amountPuzzles;
-    public GameObject mainUI;
-    public GameObject winScreen;
+    public UnityEvent whenDone;
 
     //Variables Privadas
     private float progressAdvance;
@@ -24,8 +24,7 @@ public class PuzzleProgressBar : MonoBehaviour
     {
         if (barraProgreso.fillAmount == 1)
         {
-            mainUI.SetActive(false);
-            winScreen.SetActive(true);
+            whenDone.Invoke();
         }
     }
 }

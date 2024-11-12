@@ -28,7 +28,6 @@ public class PuzzlePosition : MonoBehaviour
     {
         if(puzzleObject != null)
         {
-            Debug.Log("Object ID: " + puzzleObject.ID + ", PositionID: " + ID);
             if(puzzleObject.ID == ID)
             {
                 return true;
